@@ -1,3 +1,98 @@
+# 🚀 快速调用
+
+## 仓库地址
+
+```text
+https://github.com/SHILEIHUAJI/mobile-assets
+```
+
+---
+
+## CDN根地址
+
+```text
+https://cdn.jsdelivr.net/gh/SHILEIHUAJI/mobile-assets@main
+```
+
+---
+
+## 资源索引
+
+```text
+https://cdn.jsdelivr.net/gh/SHILEIHUAJI/mobile-assets@main/assets.json
+```
+
+---
+
+## 文件访问规则
+
+资源地址格式：
+
+```text
+https://cdn.jsdelivr.net/gh/SHILEIHUAJI/mobile-assets@main/{分类}/{文件路径}
+```
+
+例如：
+
+```text
+https://cdn.jsdelivr.net/gh/SHILEIHUAJI/mobile-assets@main/wallpapers/vivo/wp1.jpg
+```
+
+---
+
+## 获取随机壁纸
+
+```js
+const data = await fetch(
+  'https://cdn.jsdelivr.net/gh/SHILEIHUAJI/mobile-assets@main/assets.json'
+).then(r => r.json());
+
+const list = data.wallpapers.files;
+
+const file =
+  list[Math.floor(Math.random() * list.length)];
+
+const url =
+  `https://cdn.jsdelivr.net/gh/SHILEIHUAJI/mobile-assets@main/wallpapers/${file}`;
+```
+
+---
+
+## 通用调用函数
+
+```js
+const CDN =
+  'https://cdn.jsdelivr.net/gh/SHILEIHUAJI/mobile-assets@main';
+
+const INDEX =
+  `${CDN}/assets.json`;
+
+async function getRandomAsset(type){
+
+  const data =
+    await fetch(INDEX).then(r=>r.json());
+
+  const files = data[type]?.files || [];
+
+  if(!files.length)
+    return null;
+
+  const file =
+    files[Math.floor(Math.random()*files.length)];
+
+  return `${CDN}/${type}/${file}`;
+}
+```
+
+使用：
+
+```js
+await getRandomAsset('wallpapers');
+await getRandomAsset('avatars');
+await getRandomAsset('icon');
+await getRandomAsset('logos');
+```
+
 # 🗂️ 静态资源库
 
 统一管理个人项目所需的公共静态资源。
