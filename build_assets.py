@@ -1,51 +1,17 @@
-import json
-from pathlib import Path
+for f in folder.rglob("*"):
 
-ROOT = Path(__file__).parent
-
-IGNORE = {
-    ".git",
-    ".github",
-    "__pycache__"
-}
-
-result = {}
-
-for item in ROOT.iterdir():
-
-    if not item.is_dir():
+    if not f.is_file():
         continue
 
-    if item.name in IGNORE:
+    # 忽略说明文件
+    if f.name.lower() in {
+        "readme.md",
+        ".ds_store"
+    }:
         continue
 
-    files = []
-
-    for f in item.rglob("*"):
-
-        if f.is_file():
-            files.append(
-                str(
-                    f.relative_to(item)
-                ).replace("\\", "/")
-            )
-
-    result[item.name] = {
-        "count": len(files),
-        "files": sorted(files)
-    }
-
-with open(
-    ROOT / "assets.json",
-    "w",
-    encoding="utf-8"
-) as fp:
-
-    json.dump(
-        result,
-        fp,
-        ensure_ascii=False,
-        indent=2
+    files.append(
+        str(
+            f.relative_to(folder)
+        ).replace("\\","/")
     )
-
-print("资产清单已生成")
