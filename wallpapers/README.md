@@ -24,6 +24,9 @@ abstract
 artificial intelligence
 - AI生成
 
+vivo
+- 系统壁纸
+
 ## 建议  
   
 优先保存：  
@@ -31,7 +34,9 @@ artificial intelligence
 - png  
 - jpg  
 - webp  
-  
+
+### 仅自用不用于网络分发
+
 ### 尽量保留高清原图
   
 ### 不保存压缩严重的图片
