@@ -1,14 +1,11 @@
 {
   "logos": {
-    "count": 1,
-    "files": [
-      "README.md"
-    ]
+    "count": 0,
+    "files": []
   },
   "wallpapers": {
-    "count": 19,
+    "count": 18,
     "files": [
-      "README.md",
       "vivo/wp1.jpg",
       "vivo/wp10.jpg",
       "vivo/wp11.jpg",
@@ -30,27 +27,19 @@
     ]
   },
   "fonts": {
-    "count": 1,
-    "files": [
-      "README.md"
-    ]
+    "count": 0,
+    "files": []
   },
   "temp": {
-    "count": 1,
-    "files": [
-      "README.md"
-    ]
+    "count": 0,
+    "files": []
   },
   "avatars": {
-    "count": 1,
-    "files": [
-      "README.md"
-    ]
+    "count": 0,
+    "files": []
   },
   "icon": {
-    "count": 1,
-    "files": [
-      "README.md"
-    ]
+    "count": 0,
+    "files": []
   }
 }
